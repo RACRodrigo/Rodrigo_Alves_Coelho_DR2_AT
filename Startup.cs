@@ -24,13 +24,6 @@ namespace Rodrigo_Alves_Coelho_DR2_AT
         {
             services.AddControllersWithViews();
 
-            services.AddTransient<IPessoaRepository, PessoaRepository>();
-            services.AddTransient<IPessoaService, PessoaService>();
-
-            services.AddScoped<CallCountScoped>();
-            services.AddSingleton<CallCountSingleton>();
-            services.AddTransient<CallCountTransient>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
