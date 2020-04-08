@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Rodrigo_Alves_Coelho_DR2_AT.Repositories;
+using Rodrigo_Alves_Coelho_DR2_AT.Repositories.Implementations;
+using Rodrigo_Alves_Coelho_DR2_AT.Services;
+using Rodrigo_Alves_Coelho_DR2_AT.Services.Implementations;
 
 namespace Rodrigo_Alves_Coelho_DR2_AT
 {
@@ -23,6 +27,9 @@ namespace Rodrigo_Alves_Coelho_DR2_AT
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddTransient<IPessoaRepository, PessoaRepository>();
+            services.AddTransient<IPessoaService, PessoaService>();
 
         }
 
